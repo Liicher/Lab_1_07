@@ -4,10 +4,13 @@ public class Process {
 
     public Process()
     {
-        int key = Generate.getArrKey();     // Переменная с типом массива
 
+    }
+
+    public void process()
+    {
         // Запуск обоих оброботчиков того или иного типа данных
-        if (key == 1) {
+        if (Generate.getArrKey() == 1) {
 
             ProcessInt_1 P1 = new ProcessInt_1();
             ProcessInt_2 P2 = new ProcessInt_2();
@@ -29,4 +32,5 @@ public class Process {
             thread_P2.start();
         }
     }
+
 }
