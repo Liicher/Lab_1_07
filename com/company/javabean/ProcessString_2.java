@@ -15,8 +15,8 @@ public class ProcessString_2 implements ProcessString, Runnable {
     int N;              // Объем данных
 
     public ProcessString_2() {
-        this.Array = Generate.getArray_Str();
-        this.N = Generate.getN();
+        this.Array = choiceGenerator.getArrayStr();
+        this.N = choiceGenerator.getLen();
     }
 
     public void process(int N, String[] Array_Str) {
@@ -49,7 +49,7 @@ public class ProcessString_2 implements ProcessString, Runnable {
         }
         sb1.append("Общее  количество  слов:   " + WordsCountAll +
                 "\nОбщее количество символов: " + SymbolCountAll);
-        processObserverStr2.setContent("\n" + sb1);
+        processObserverStr2.setContent("\n" + sb1 + "\n");
     }
 
     public static int[] getWordsCountStr() { return WordsCountStr; }
@@ -59,6 +59,6 @@ public class ProcessString_2 implements ProcessString, Runnable {
 
     @Override
     public void run() {
-        process(Generate.getN(), Generate.getArray_Str());
+        process(N, Array);
     }
 }

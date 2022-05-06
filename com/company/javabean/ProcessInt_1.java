@@ -6,32 +6,28 @@ package com.company.javabean;
 */
 
 public class ProcessInt_1 implements ProcessInt, Runnable {
-    private static double sum;      // Сумма всех данных
-    private static double average;  // Среднее значение
-    private static double min;      // Минимальное значение
-    private static double max;      // Максимальное значение
-
     int[] Array;                    // Массив с данными
     int N;                          // Объем данных
 
     public ProcessInt_1() {
-        this.Array = Generate.getArray_int();
-        this.N = Generate.getN();
+        this.Array = choiceGenerator.getArrayInt();
+        this.N = choiceGenerator.getLen();
     }
 
     @Override
     public void run() {
-        process(Generate.getN(), Generate.getArray_int());
+        process(N, Array);
     }
 
     public void process(int N, int[] Array_Int) {
         var processObserverInt1 = new ProcessObserver();
         new Logger("Обработчик целых №1", processObserverInt1);
 
-        sum = 0;                        // Сумма
-        average = 0;                    // Среднее значение
-        min = 1000;                     // Минимальное значение
-        max = 0;                        // Максимальное значение
+        // Сумма всех данных
+        double sum = 0;                         // Сумма
+        double average;                         // Среднее значение
+        double min = 1000;                      // Минимальное значение
+        double max = 0;                         // Максимальное значение
 
         for(int i = 0; i < N; i++) {
             sum = sum + Array_Int[i];
@@ -46,16 +42,9 @@ public class ProcessInt_1 implements ProcessInt, Runnable {
         }
         average = sum / N;
 
-        processObserverInt1.setContent("\nСумма = " + ProcessInt_1.getSum() +
-                "\nМинимальное значение = " + ProcessInt_1.getMin() +
-                "\nМаксимальное значение = " + ProcessInt_1.getMax() +
-                "\nСреднее значение = " + ProcessInt_1.getAverage());
+        processObserverInt1.setContent("\nСумма = " + sum +
+                "\nМинимальное значение = " + min +
+                "\nМаксимальное значение = " + max +
+                "\nСреднее значение = " + average + "\n");
     }
-
-    public static double getSum() { return sum; }
-    public static double getAverage() { return average; }
-    public static double getMin() { return min; }
-    public static double getMax() { return max; }
-
-
 }

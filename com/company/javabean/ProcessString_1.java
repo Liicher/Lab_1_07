@@ -10,8 +10,8 @@ public class ProcessString_1 implements ProcessString, Runnable {
     int N;              // Объем данных
 
     public ProcessString_1() {
-        this.Array = Generate.getArray_Str();
-        this.N = Generate.getN();
+        this.Array = choiceGenerator.getArrayStr();
+        this.N = choiceGenerator.getLen();
     }
 
     public void process(int N, String[] Array_Str)  // Склейка строк
@@ -30,11 +30,11 @@ public class ProcessString_1 implements ProcessString, Runnable {
         for(int i = 0; i < N; i++) {
             sb1.append(array_2[i]).append("\n");
         }
-        processObserverStr1.setContent("\nОбновленный массив:\n" + sb1);
+        processObserverStr1.setContent("\nОбновленный массив:\n" + sb1 + "\n");
     }
 
     @Override
     public void run() {
-        process(Generate.getN(), Generate.getArray_Str());
+        process(N, Array);
     }
 }

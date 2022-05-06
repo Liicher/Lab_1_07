@@ -22,40 +22,13 @@
 консоль.
 */
 package com.company;
-import com.company.javabean.Generate;
-import com.company.javabean.Process;
+
 import com.company.javabean.Choice;
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
+import com.company.javabean.choiceGenerator;
 
 public class Main {
     public static void main(String[] args) {
-
         Choice choice = new Choice();
-        int key = choice.choice(3);
-
-
-        Generate generate = new Generate();
-        generate.generate();                    // Вызов функции случайной генерации данных
-        Process process = new Process();        // Вызов обработчиков
-        process.process();
-
-
-
-        try {
-            File file = new File("File.txt");
-
-            if(!file.exists())
-                file.createNewFile();
-
-
-        } catch (IOException e) {
-            System.out.println("ERROR: " + e);
-        }
-
-
-
-
+        choiceGenerator cG = new choiceGenerator(choice.choice(3));
     }
 }

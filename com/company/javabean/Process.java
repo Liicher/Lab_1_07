@@ -2,15 +2,12 @@ package com.company.javabean;
 
 public class Process {
 
-    public Process()
-    {
+    public Process() {}
 
-    }
-
-    public void process()
+    public void process(int type)
     {
         // Запуск обоих оброботчиков того или иного типа данных
-        if (Generate.getArrKey() == 1) {
+        if (type == 1) {
 
             ProcessInt_1 P1 = new ProcessInt_1();
             ProcessInt_2 P2 = new ProcessInt_2();

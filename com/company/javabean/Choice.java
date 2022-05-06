@@ -12,10 +12,9 @@ public class Choice
         switch (CKey)
         {
             case 1:
-                System.out.println("Введите объем баззы данных: ");
-                System.out.println("Случайный генератор случайных целых чисел, либо строк\n");
-                System.out.println("1. Сгенерировать случайные целые числа");
-                System.out.println("2. Сгенерировать случайные строки");
+                System.out.println("Генератор целых чисел или строк:\n");
+                System.out.println("1. Генератор целых чисел");
+                System.out.println("2. Генератор строк");
                 System.out.print("Введите нужное действие: ");
                 key = sc.nextInt();
                 System.out.println();
@@ -36,6 +35,15 @@ public class Choice
                 System.out.println("2 - Ввести данные в ручную");
                 System.out.println("3 - Случайные данные");
                 System.out.print("Введите нужное действие: ");
+                key = sc.nextInt();
+                System.out.println();
+                return key;
+
+            case 4:
+                System.out.println("Желаете создать новый файл?");
+                System.out.println("1 - Да");
+                System.out.println("2 - Нет");
+                System.out.println("Введите нужное действие: ");
                 key = sc.nextInt();
                 System.out.println();
                 return key;
