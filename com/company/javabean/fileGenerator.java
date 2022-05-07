@@ -6,10 +6,10 @@ import java.io.IOException;
 import java.io.BufferedReader;
 
 public class fileGenerator implements IGenerator {
-    int type;
-    int len;
-    int[] ArrayInt;
-    String[] ArrayStr;
+    private static int type;
+    private static int len;
+    private static int[] ArrayInt;
+    private static String[] ArrayStr;
 
     @Override
     public void generate() {

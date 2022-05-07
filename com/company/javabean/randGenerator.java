@@ -1,32 +1,42 @@
 package com.company.javabean;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class randGenerator implements IGenerator {
-    private static final int N = 5;                             // Размер объема данных (изменяется здесь)
-    private static final int[] Array_int = new int[N];          // Массив для целлочисленных данных
-    private static final String[] Array_Str = new String[N];    // Массив для строк
+    private static int len;                            // Размер объема данных (изменяется здесь)
+    private static int[] ArrayInt;                     // Массив для целлочисленных данных
+    private static String[] ArrayStr;                  // Массив для строк
+    private static int type;
 
     @Override
     public void generate() {
         Choice choice = new Choice();
-        switch (choice.choice(1)) {
+        Scanner sc = new Scanner(System.in);
+
+        type = choice.choice(1);
+        System.out.print("Введите объем данных: ");
+        len = sc.nextInt();
+
+        switch (type) {
             // Генерация целочисленных данных
             case 1:
-                for(int i = 0; i < N; i++) {
-                    Array_int[i] = 1 + (int) ( Math.random() * 100 );
-                    System.out.print(Array_int[i] + " ");
+                ArrayInt = new int[len];
+                for(int i = 0; i < len; i++) {
+                    ArrayInt[i] = 1 + (int) ( Math.random() * 100 );
+                    System.out.print(ArrayInt[i] + " ");
                     try {
-                        Thread.sleep(500);
+                        Thread.sleep(100);
                     } catch (InterruptedException ignored) {}
                 }
-                System.out.println();
+                System.out.println("\n");
                 break;
 
             // Генерация строк
             case 2:
+                ArrayStr = new String[len];
                 String str="abcdefghijklmnopqrstuvwxyz";
-                for(int j = 0; j < N; j++) {
+                for(int j = 0; j < len; j++) {
                     Random random = new Random();
                     StringBuilder sb = new StringBuilder();
 
@@ -57,14 +67,14 @@ public class randGenerator implements IGenerator {
                             sb.append(str.charAt(number));
                         }
                     }
-                    Array_Str[j] = sb.toString();
+                    ArrayStr[j] = sb.toString();
                 }
 
                 // Вывод массива строк
-                for(int i = 0; i<N; i++) {
-                    System.out.println(Array_Str[i]);
+                for(int i = 0; i < len; i++) {
+                    System.out.println(ArrayStr[i]);
                     try {
-                        Thread.sleep(500);
+                        Thread.sleep(100);
                     } catch (InterruptedException ignored) {}
                 }
                 System.out.println();
@@ -74,4 +84,9 @@ public class randGenerator implements IGenerator {
                 break;
         }
     }
+
+    public int getLen() { return len; }
+    public int[] getArrayInt() { return ArrayInt; }
+    public String[] getArrayStr() { return ArrayStr; }
+    public int getType() { return type; }
 }
