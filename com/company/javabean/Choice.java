@@ -48,6 +48,13 @@ public class Choice
                 System.out.println();
                 return key;
 
+            case 5:
+                System.out.println("Какое количество данных сгенерировать?");
+                System.out.println("Введите нужное количество: ");
+                key = sc.nextInt();
+                System.out.println();
+                return key;
+
             default:
                 return 0;
         }

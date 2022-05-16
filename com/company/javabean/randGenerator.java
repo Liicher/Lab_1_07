@@ -3,7 +3,7 @@ package com.company.javabean;
 import java.util.Random;
 import java.util.Scanner;
 
-public class randGenerator implements IGenerator {
+public class randGenerator implements IGenerator, Runnable {
     private static int len;                            // Размер объема данных (изменяется здесь)
     private static int[] ArrayInt;                     // Массив для целлочисленных данных
     private static String[] ArrayStr;                  // Массив для строк
@@ -85,8 +85,15 @@ public class randGenerator implements IGenerator {
         }
     }
 
+    @Override
+    public void run() {
+        generate();
+    }
+
     public int getLen() { return len; }
     public int[] getArrayInt() { return ArrayInt; }
     public String[] getArrayStr() { return ArrayStr; }
     public int getType() { return type; }
+
+
 }

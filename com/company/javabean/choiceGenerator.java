@@ -1,6 +1,6 @@
 package com.company.javabean;
 
-import com.company.javabean.fileGenerator;
+import com.company.javabean.Choice;
 
 public class choiceGenerator {
     private static int[] ArrayInt;
@@ -14,6 +14,7 @@ public class choiceGenerator {
 
     public void generation(int key) {
         Process process = new Process();
+        Choice choice = new Choice();
 
         switch (key) {
             case 1:
