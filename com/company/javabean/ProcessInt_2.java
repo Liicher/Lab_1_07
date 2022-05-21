@@ -1,10 +1,5 @@
 package com.company.javabean;
 
-/*
-второй обработчик — удаляет из списка четные или
-нечетные элементы, в зависимости от настройки.
-*/
-
 public class ProcessInt_2 implements ProcessInt, Runnable {
     int[] Array;
     int N;

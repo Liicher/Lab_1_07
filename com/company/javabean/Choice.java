@@ -30,7 +30,7 @@ public class Choice
                 return key;
 
             case 3:
-                System.out.println("Какие данные взять?");
+                System.out.println("Какие данные использовать?");
                 System.out.println("1 - Из файла");
                 System.out.println("2 - Ввести данные в ручную");
                 System.out.println("3 - Случайные данные");

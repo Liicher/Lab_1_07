@@ -1,10 +1,5 @@
 package com.company.javabean;
 
-/*
-первый обработчик возвращает их сумму, среднее значение,
-минимальный и максимальный элемент
-*/
-
 public class ProcessInt_1 implements ProcessInt, Runnable {
     int[] Array;                    // Массив с данными
     int N;                          // Объем данных

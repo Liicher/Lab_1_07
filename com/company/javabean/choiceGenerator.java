@@ -1,7 +1,5 @@
 package com.company.javabean;
 
-import com.company.javabean.Choice;
-
 public class choiceGenerator {
     private static int[] ArrayInt;
     private static String[] ArrayStr;

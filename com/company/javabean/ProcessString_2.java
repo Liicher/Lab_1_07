@@ -1,10 +1,5 @@
 package com.company.javabean;
 
-/*
-Второй обработчик подсчитывает количество слов в каждой
-строке, общее количество слов и символов по всем строкам списка
-*/
-
 public class ProcessString_2 implements ProcessString, Runnable {
     private static int[] WordsCountStr;     // Массив для количества слов в каждой строке
     private static int WordsCountAll;       // Количество слов во всех строках

@@ -86,14 +86,10 @@ public class randGenerator implements IGenerator, Runnable {
     }
 
     @Override
-    public void run() {
-        generate();
-    }
+    public void run() { generate(); }
 
     public int getLen() { return len; }
     public int[] getArrayInt() { return ArrayInt; }
     public String[] getArrayStr() { return ArrayStr; }
     public int getType() { return type; }
-
-
 }

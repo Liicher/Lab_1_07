@@ -1,9 +1,5 @@
 package com.company.javabean;
 
-/*
-Первый обработчик — возвращает «склеенную» строку
-*/
-
 public class ProcessString_1 implements ProcessString, Runnable {
 
     String[] Array;     // Массив сгенерированных строк
